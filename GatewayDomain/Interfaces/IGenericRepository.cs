@@ -10,7 +10,6 @@ namespace GatewayDomain.Interfaces
     public interface IGenericRepository<T> where T : class
     {
 
-        Task<IEnumerable<R>> GetAll<R>(Expression<Func<T, R>> selector);
 
         Task<IEnumerable<T>> GetAllAsync();
 

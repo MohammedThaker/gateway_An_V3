@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GatewayDomain.Entities
 {
-    public class ProviderProvinces
+    public class ProviderCountry
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
@@ -16,20 +16,8 @@ namespace GatewayDomain.Entities
         public string Code { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public int ProviderId { get; set; }
-        public int ProvinceId { get; set; }
+        public int CountryId { get; set; }
         public int CompanyId { get; set; }
-
-        [ForeignKey(nameof(ProviderId))]
-        [InverseProperty(nameof(Providers.providerprovince))]
-        public Providers? provide { get; set; }
-
-        [ForeignKey(nameof(ProvinceId))]
-        [InverseProperty(nameof(Provinces.providerprovince))]
-        public Provinces? province { get; set; }
-
-        [ForeignKey(nameof(CompanyId))]
-        [InverseProperty(nameof(Companies.providerprovince))]
-        public Companies? company { get; set; }
 
     }
 }

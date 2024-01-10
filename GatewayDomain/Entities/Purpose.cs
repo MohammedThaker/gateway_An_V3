@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace GatewayDomain.Entities
 {
-    public class Purposes
+    public class Purpose
     {
-        public Purposes()
+        public Purpose()
         {
-            providerpurpose = new HashSet<ProviderPurposes>();
+            providerpurpose = new HashSet<ProviderPurpose>();
         }
         public int PurposeId { get; set; }
         public string PurposeName { get; set; } = string.Empty;
         public string PurposeDescription { get; set; } = string.Empty;
         
-        [InverseProperty(nameof(ProviderPurposes.purpose))]
-        public ICollection<ProviderPurposes>? providerpurpose { get; set; }
+        public ICollection<ProviderPurpose>? providerpurpose { get; set; }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GatewayDomain.Entities
 {
-    public class ProviderCompanies: AuditableEntity
+    public class ServiceProvider: AuditableEntity
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
@@ -17,15 +17,8 @@ namespace GatewayDomain.Entities
         public string Code { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public int ProviderId { get; set; }
+        public int ServiceId { get; set; }
         public int CompanyId { get; set; }
-
-        [ForeignKey(nameof(ProviderId))]
-        [InverseProperty(nameof(Providers.providercompanies))]
-        public Providers? provide { get; set; }
-
-        [ForeignKey(nameof(CompanyId))]
-        [InverseProperty(nameof(Companies.providercompanies))]
-        public Companies? company { get; set; }
 
     }
 }
